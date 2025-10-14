@@ -1,0 +1,8 @@
+
+    /* small custom tweaks */
+    .sidebar { width: 260px; }
+    .content { margin-left: 260px; }
+    @media (max-width: 1024px) {
+    .sidebar { transform: translateX(-100%); position: fixed; z-index:50; }
+    .content { margin-left: 0; }
+    }

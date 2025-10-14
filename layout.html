@@ -1,0 +1,79 @@
+<!-- layout.html - reusable sidebar + header -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HRMS Layout (component)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-gray-50 min-h-screen font-inter">
+<div class="flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar bg-emerald-600 text-white min-h-screen p-6 hidden lg:block">
+    <div class="mb-10">
+        <div class="text-xl font-bold">Civil Service HRMS</div>
+    </div>
+
+    <nav class="space-y-2 text-sm">
+        <a href="dashboard.html" class="flex items-center gap-3 p-3 rounded bg-emerald-700">
+        <span class="w-6">🏠</span> <span>Dashboard</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">👥</span> <span>Staff</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">📁</span> <span>Leave Information</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">📜</span> <span>Record of Service</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">📊</span> <span>Reports</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">⚙️</span> <span>Manage Users</span>
+        </a>
+
+        <div class="mt-12 text-xs opacity-90">© 2025 Civil Service HRMS</div>
+    </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex-1 content min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b p-4 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+        <button id="menuBtn" class="lg:hidden p-2 rounded bg-emerald-600 text-white">☰</button>
+        <h1 class="text-2xl font-semibold text-gray-800">Page Title</h1>
+        </div>
+
+        <div class="flex items-center gap-4">
+        <div class="relative">
+            <input placeholder="Search..." class="border rounded px-3 py-2 w-72" />
+        </div>
+        <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center">SB</div>
+        </div>
+    </header>
+
+    <!-- Content area placeholder -->
+    <main class="p-6">
+        <div class="bg-white p-8 rounded shadow">
+        <p class="text-gray-600">Use this layout snippet in your pages. Copy the aside and header.Add your own content</p>
+        </div>
+    </main>
+    </div>
+</div>
+
+<script>
+    // sidebar toggle for small screens
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    menuBtn?.addEventListener('click', () => {
+    sidebar.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
