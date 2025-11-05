@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Dashboard - Ogun State Civil Service HRMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Main Container -->
+  <div class="flex min-h-screen">
+
+     <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar bg-emerald-600 text-white min-h-screen p-6 hidden lg:block">
+    <div class="mb-10">
+        <div class="text-xl font-bold">Civil Service HRMS</div>
+    </div>
+
+    <nav class="space-y-2 text-sm">
+        <a href="dashboard.html" class="flex items-center gap-3 p-3 rounded bg-emerald-700">
+        <span class="w-6">🏠</span> <span>Dashboard</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">👥</span> <span>Staff</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">📁</span> <span>Leave Information</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">📜</span> <span>Record of Service</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">📊</span> <span>Reports</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <span class="w-6">⚙️</span> <span>Manage Users</span>
+        </a>
+
+        <div class="mt-12 text-xs opacity-90">© 2025 Civil Service HRMS</div>
+    </nav>
+    </aside>
+
+
+    <!-- Overlay for mobile -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 md:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col w-full md:ml-0 ml-0">
+
+      <!-- Top Bar -->
+      <div class="sticky top-0 bg-white shadow-sm z-30 px-4 py-3 flex justify-between items-center md:px-8">
+        <div class="flex items-center space-x-4">
+          <button id="openSidebar" class="md:hidden text-green-800 text-2xl font-bold">&#9776;</button>
+          <h1 class="text-xl md:text-2xl font-semibold">Dashboard</h1>
+        </div>
+        <div class="flex items-center space-x-3">
+          <input type="text" placeholder="Search..." class="hidden sm:block border rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-green-700" />
+          <div class="bg-green-800 text-white rounded-full w-8 h-8 flex items-center justify-center font-semibold">SB</div>
+        </div>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div class="p-4 md:p-8">
+        
+        <!-- Overview Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          <!-- Total Staff -->
+          <div class="bg-white p-6 rounded-lg shadow flex items-center space-x-4 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div class="bg-green-100 p-3 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-3xl font-bold md:text-4xl">150</p>
+              <p class="text-gray-500 text-sm md:text-base">Total Staff</p>
+            </div>
+          </div>
+
+          <!-- Pending Leaves -->
+          <div class="bg-white p-6 rounded-lg shadow flex items-center space-x-4 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div class="bg-yellow-100 p-3 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-3xl font-bold md:text-4xl">12</p>
+              <p class="text-gray-500 text-sm md:text-base">On Leave</p>
+            </div>
+          </div>
+
+          <!-- Average Performance -->
+          <div class="bg-white p-6 rounded-lg shadow flex items-center space-x-4 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div class="bg-blue-100 p-3 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3v18m4-12h6m-6 4h6M3 7h6m-6 4h6m-6 4h6" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-3xl font-bold md:text-4xl">5</p>
+              <p class="text-gray-500 text-sm md:text-base">Pending Approvals</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leave Requests & Performance -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Leave Requests -->
+          <div class="col-span-2 bg-white p-6 rounded-lg shadow transition-all duration-300 hover:shadow-lg overflow-x-auto">
+            <h2 class="text-lg font-semibold mb-4">Leave Requests</h2>
+            <table class="w-full text-left border-collapse text-sm md:text-base">
+              <thead>
+                <tr class="border-b text-gray-600">
+                  <th class="py-2">Staff</th>
+                  <th>Type</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="py-2">John Doe</td>
+                  <td>Annual</td>
+                  <td>2024-03-05</td>
+                  <td>2024-03-12</td>
+                  <td>Approved</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-2">Jane Smith</td>
+                  <td>Maternity</td>
+                  <td>2024-04-15</td>
+                  <td>2024-04-18</td>
+                  <td>Pending</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-2">Sarah Johnson</td>
+                  <td>Study</td>
+                  <td>2024-02-01</td>
+                  <td>2024-02-05</td>
+                  <td>Rejected</td>
+                </tr>
+              
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Performance -->
+          <div class="bg-white p-6 rounded-lg shadow transition-all duration-300 hover:shadow-lg">
+            <h2 class="text-lg font-semibold mb-4">Performance</h2>
+            <canvas id="performanceChart" height="200"></canvas>
+            <div class="text-green-700 mt-2 text-sm">● Pending</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('performanceChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar'],
+        datasets: [{
+          label: '',
+          data: [60, 85, 90],
+          borderColor: '#166534',
+          backgroundColor: 'rgba(22,101,52,0.1)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: false, min: 50, max: 100 } }
+      }
+    });
+
+    // Sidebar toggle for mobile
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const openSidebar = document.getElementById('openSidebar');
+    const closeSidebar = document.getElementById('closeSidebar');
+
+    openSidebar.addEventListener('click', () => {
+      sidebar.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+    });
+
+    closeSidebar.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
