@@ -1,7 +1,7 @@
 <?php
 $db_name = 'mysql:host=localhost;dbname=civil_service_hrm';
-$db_user_name = 'Laravel_team';
-$db_user_pass = 'Laravel_team';
+$db_user_name = 'root';
+$db_user_pass = '';
 
 $db_host = 'localhost';
 $database_name = 'civil_service_hrm';
