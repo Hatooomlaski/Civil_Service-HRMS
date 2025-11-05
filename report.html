@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Civil Service HRMS - Reports</title>
+  <link rel="stylesheet" href="./src/output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col md:flex-row">
+
+  <!-- Sidebar -->
+  <aside id="sidebar"
+    class="w-64 bg-green-700 text-white flex flex-col justify-between fixed md:relative inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-20">
+    <div>
+      <h1 class="text-xl font-semibold p-6 border-b border-green-600">Civil Service HRMS</h1>
+      <nav class="mt-4 space-y-2">
+        <a href="#" class="flex items-center px-6 py-2 hover:bg-green-600">
+          <span>🏠</span><span class="ml-2">Dashboard</span>
+        </a>
+        <a href="#" class="flex items-center px-6 py-2 hover:bg-green-600">
+          <span>🗂️</span><span class="ml-2">Leave Information</span>
+        </a>
+        <a href="#" class="flex items-center px-6 py-2 hover:bg-green-600">
+          <span>📄</span><span class="ml-2">Record of Service</span>
+        </a>
+        <a href="#" class="flex items-center px-6 py-2 bg-green-800">
+          <span>📊</span><span class="ml-2">Reports</span>
+        </a>
+        <a href="#" class="flex items-center px-6 py-2 hover:bg-green-600">
+          <span>👥</span><span class="ml-2">Manage Users</span>
+        </a>
+        <a href="#" class="flex items-center px-6 py-2 hover:bg-green-600">
+          <span>🔒</span><span class="ml-2">Change Password</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="p-6 border-t border-green-600">
+      <a href="#" class="flex items-center hover:text-gray-300">
+        <span>➡️</span><span class="ml-2">Logout</span>
+      </a>
+      <p class="text-sm mt-3 opacity-75">© 2025 Civil Service HRMS</p>
+    </div>
+  </aside>
+
+  <!-- Mobile Header -->
+  <header class="md:hidden bg-green-700 text-white flex justify-between items-center p-4">
+    <h1 class="font-semibold text-lg">Civil Service HRMS</h1>
+    <button id="menu-btn" class="focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-10 md:hidden"></div>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 md:p-8 md:ml-0 mt-16 md:mt-0">
+    <h1 class="text-2xl font-semibold text-gray-800 mb-2">Reports</h1>
+    <p class="text-sm text-gray-500 mb-6">Dashboard › Reports</p>
+
+    <!-- Search + Button -->
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-3">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search by department or report type"
+        class="border rounded-lg px-4 py-2 w-full sm:w-1/2"
+      />
+      <button id="generateReport" class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 w-full sm:w-auto">
+        Generate Report
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="bg-white rounded-lg shadow overflow-x-auto">
+      <table class="w-full text-left border-collapse min-w-max">
+        <thead>
+          <tr class="border-b bg-gray-50">
+            <th class="p-4">Report ID</th>
+            <th class="p-4">Report Name</th>
+            <th class="p-4">Department</th>
+            <th class="p-4">Date Generated</th>
+            <th class="p-4">Status</th>
+            <th class="p-4">Action</th>
+          </tr>
+        </thead>
+        <tbody id="reportTableBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const searchInput = document.getElementById('searchInput');
+    const reportTableBody = document.getElementById('reportTableBody');
+
+    // Toggle mobile menu
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    });
+
+    // Sample report data (replace with API call or database)
+    const reports = [
+      { id: "RP001", name: "Monthly Attendance Report", department: "Human Resources", date: "05-Nov-2025", status: "Completed" },
+      { id: "RP002", name: "Leave Summary", department: "Administration", date: "04-Nov-2025", status: "Pending" },
+      { id: "RP003", name: "Staff Performance Review", department: "Finance", date: "03-Nov-2025", status: "Completed" },
+      { id: "RP004", name: "Training Attendance", department: "ICT", date: "02-Nov-2025", status: "Failed" },
+      { id: "RP005", name: "Quarterly Budget Summary", department: "Finance", date: "01-Nov-2025", status: "Completed" },
+    ];
+
+    // Function to display reports
+    function displayReports(data) {
+      reportTableBody.innerHTML = "";
+      data.forEach(report => {
+        const statusColor =
+          report.status === "Completed" ? "text-green-600" :
+          report.status === "Pending" ? "text-yellow-600" :
+          "text-red-600";
+
+        const actionText =
+          report.status === "Completed" ? "Download" :
+          report.status === "Pending" ? "View" : "Retry";
+
+        const row = `
+          <tr class="border-b hover:bg-gray-50">
+            <td class="p-4">${report.id}</td>
+            <td class="p-4">${report.name}</td>
+            <td class="p-4">${report.department}</td>
+            <td class="p-4">${report.date}</td>
+            <td class="p-4 font-semibold ${statusColor}">${report.status}</td>
+            <td class="p-4"><a href="#" class="text-blue-600 hover:underline">${actionText}</a></td>
+          </tr>`;
+        reportTableBody.insertAdjacentHTML("beforeend", row);
+      });
+    }
+
+    // Initial display
+    displayReports(reports);
+
+    // Search function
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      const filtered = reports.filter(r =>
+        r.name.toLowerCase().includes(query) ||
+        r.department.toLowerCase().includes(query)
+      );
+      displayReports(filtered);
+    });
+
+    // Generate Report (dummy example)
+    document.getElementById("generateReport").addEventListener("click", () => {
+      alert("Generating report... (You can link this button to backend logic)");
+    });
+  </script>
+</body>
+</html>
