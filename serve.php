@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             $query = http_build_query($message);
-            header("Location: Login.php?$query");
+            header("Location: Login.html?$query");
             exit();
         }
     }
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         if (!empty($error)) {
             $query = http_build_query($error);
-            header("Location: login.php?$query");
+            header("Location: dashboard.html?$query");
             exit();
         }
     
