@@ -19,25 +19,25 @@
     </div>
 
     <nav class="space-y-2 text-sm">
-        <a href="dashboard.html" class="flex items-center gap-3 p-3 rounded bg-emerald-700">
+        <a href="dashboard.php" class="flex items-center gap-3 p-3 rounded bg-emerald-700">
         <span class="w-6">🏠</span> <span>Dashboard</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <a href="staff.php" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">👥</span> <span>Staff</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <a href="leave.html" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">📁</span> <span>Leave Information</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <a href="record-service.html" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">📜</span> <span>Record of Service</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <a href="report.html" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">📊</span> <span>Reports</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <!-- <a href="" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">⚙️</span> <span>Manage Users</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        </a> -->
+        <a href="logout.html" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">↩️</span> <span>Logout</span>
         </a>
 

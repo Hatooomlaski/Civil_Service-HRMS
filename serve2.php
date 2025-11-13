@@ -44,13 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $hashed_Password = password_hash($password, PASSWORD_DEFAULT);
             }
         if (empty($_POST['confirmPassword'])) {
-         $errors['confirmPassword'] = "Please confirm your password";
-         } else {
-         $confirm_password = validate_input($_POST['confirmPassword']);
-         }
+        $errors['confirmPassword'] = "Please confirm your password";
+        } else {
+        $confirm_password = validate_input($_POST['confirmPassword']);
+        }
 
     // Only compare if there are no password errors yet
-         if (empty($errors['password'])) {
+        if (empty($errors['password'])) {
             if ($password !== $confirm_password) {
             $errors['confirmPassword'] = "Passwords do not match";
             }
@@ -82,6 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    //LOGIN
     if (isset($_POST['LoginBtn'])) {
         $error = [];
 
@@ -135,3 +136,10 @@ function validate_input($data)
     return $data;
 }
 ?>
+
+<!-- <?php
+//include 'connection.php';
+//$EmailErr = $_GET['email'] ?? ' ';
+//$PasswordErr = $_GET['password'] ?? ' ';
+?>
+<form action="serve.php" method="post"> -->

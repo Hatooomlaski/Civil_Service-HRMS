@@ -8,9 +8,41 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="container"> 
+    <div class="flex">
+    <div class="w-64 bg-emerald-700 text-white min-h-screen p-4">
+
+
+    <div class="w=full bg-emerald-700 flex flex-col justify-center items-center text-white p-7">
+        <div class="text-center">
+            <div class="flex justify-center ">
+                
+                <!-- Logo Placeholder -->
+        <div class="w-20 h-20 border-white flex items-center justify-center">
+          <div>
+            <img src="../images/ogunlogo.jpg" alt="" class="h-20 w-20">
+        </div>
+    </div>
+</div>
+
+<!-- <h2 class="text-2xl font-bold mb-1"></h2> -->
+    </div>
+  </div>
+      
+      <ul>
+        <li class="mb-3"><a href="dashboard.php" class="block p-2 bg-emerald-800 rounded"><span class="w-6">🏠</span> <span>Dashboard</span></a></li>
+        <li class="mb-3"><a href="staff.php" class="block p-2 hover:bg-emerald-600 rounded"><span class="w-6">👥</span> <span>Staff</span></a></li>
+        <li class="mb-3"><a href="leave.php" class="block p-2 hover:bg-emerald-600 rounded"><span class="w-6">📁</span> <span>Leave Information</span></a></li>
+        <li class="mb-3"><a href="record-service.php" class="block p-2 hover:bg-emerald-600 rounded"><span class="w-6">📜</span> <span>Record of Service</span></a></li>
+        <li class="mb-3"><a href="report.php" class="block p-2 hover:bg-emerald-600 rounded"><span class="w-6">📊</span> <span>Reports</span></a></li>
+        <!-- <li class="mb-3"><a href="users.php" class="block p-2 hover:bg-emerald-600 rounded">Manage Users</a></li> -->
+        <!-- <li class="mb-3"><a href="change_password.php" class="block p-2 hover:bg-emerald-600 rounded">Change Password</a></li> -->
+        <li class="mt-8"><a href="../actions/logout.php" class="block p-2 bg-red-600 text-center rounded"><span class="w-6">↩️</span> <span>Logout</span></a></li>
+      </ul>
+    </div>
+
     <!-- Sidebar -->
-      <aside id="sidebar" class="sidebar bg-emerald-600 text-white min-h-screen p-6 hidden lg:block">
+     <!-- <aside id="sidebar" class="sidebar bg-emerald-600 text-white min-h-screen p-6 hidden lg:block">
     <div class="mb-10">
         <div class="text-xl font-bold">Civil Service HRMS</div>
     </div>
@@ -19,28 +51,29 @@
         <a href="dashboard.html" class="flex items-center gap-3 p-3 rounded bg-emerald-700">
         <span class="w-6">🏠</span> <span>Dashboard</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <a href="staff.html" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">👥</span> <span>Staff</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <a href="leave.html" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">📁</span> <span>Leave Information</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <a href="record-service.html" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">📜</span> <span>Record of Service</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <a href="report.html" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">📊</span> <span>Reports</span>
         </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        <a href="" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">⚙️</span> <span>Manage Users</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
+        </a> -->
+        <!-- <a href="logout.html" class="flex items-center gap-3 p-3 rounded hover:bg-emerald-700">
         <span class="w-6">↩️</span> <span>Logout</span>
         </a>
 
         <div class="mt-12 text-xs opacity-90">© 2025 Civil Service HRMS</div>
     </nav>
-    </aside>
+    </aside> --> 
+
     <!-- <aside id="sidebar" class="sidebar  bg-emerald-600 text-white min-h-screen p-6 hidden lg:block ">
       <h2>Civil Service HRMS</h2>
       <nav>
